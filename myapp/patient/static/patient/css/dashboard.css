@@ -53,7 +53,7 @@ body.dark{
     padding: 10px 14px;
     background: var(--sidebar-color);
     transition: var(--tran-05);
-    z-index: 100;  
+    z-index: 100;
 }
 .sidebar.close{
     width: 88px;
@@ -308,3 +308,127 @@ body.dark .switch::before{
 body.dark .home .text{
     color: var(--text-color);
 }
+
+/* Help Page Styling */
+
+.help-page {
+    position: absolute;
+    top: 0;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+    padding: 20px;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+.help-section {
+    background-color: var(--sidebar-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.section-description {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.step-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.step-list li {
+    font-size: 18px;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.step-list i {
+    margin-right: 10px;
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
+.contact-info {
+    list-style: none;
+    padding-left: 0;
+}
+
+.contact-info li {
+    font-size: 18px;
+    color: var(--text-color);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
+/* Sidebar Close Adjustments */
+.sidebar.close ~ .help-page {
+    left: 78px;
+    width: calc(100% - 78px);
+}
+
+/* Dark Mode Adjustments */
+body.dark .help-page {
+    background-color: #18191a;
+}
+
+body.dark .page-title,
+body.dark .section-title,
+body.dark .step-list li,
+body.dark .contact-info li {
+    color: var(--text-color);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .help-page {
+        left: 0;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .page-title {
+        font-size: 28px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .step-list li {
+        font-size: 16px;
+    }
+
+    .contact-info li {
+        font-size: 16px;
+    }
+}
+
