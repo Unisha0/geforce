@@ -6,7 +6,7 @@ class Command(BaseCommand):
     help = "Import hospitals from Excel file"
 
     def handle(self, *args, **kwargs):
-        file_path = "C:\\Users\\ASMITA\\Downloads\\shea project.xlsx"  # Update path
+        file_path = "D:\myapp\shea_project.xlsx"  # Update path
 
         df = pd.read_excel(file_path, header=0)  # Ensure correct header
         df.columns = df.columns.str.strip()  # Remove extra spaces
