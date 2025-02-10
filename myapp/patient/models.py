@@ -88,13 +88,5 @@ class Ambulance(models.Model):
     def __str__(self):
         return self.name
 
-from django.db import models
-from hospital.models import Hospital
 
-class PatientLocation(models.Model):
-    hospital = models.ForeignKey(Hospital, on_delete=models.CASCADE)
-    latitude = models.FloatField()
-    longitude = models.FloatField()
 
-    def str(self):
-        return f"{self.hospital.name} - ({self.latitude}, {self.longitude})"    

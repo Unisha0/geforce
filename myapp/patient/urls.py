@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import patient_map
 
 urlpatterns = [
     path('signup/', views.signup, name='patient_signup'),
@@ -11,4 +12,10 @@ urlpatterns = [
     path('help/', views.help_page, name='help_page'),
     path('patient-history/', views.patient_history, name='patient_history'),
     path('logout/', views.logout, name='logout'),
+
+      path("map/", patient_map, name="patient_map"),
+    
 ]
+
+
+

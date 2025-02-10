@@ -188,3 +188,11 @@ def edit_ambulance(request, pk=None):
     else:
         form = AmbulanceForm(instance=ambulance)
     return render(request, 'hospital/edit_ambulance.html', {'form': form})
+
+
+from django.http import JsonResponse
+from hospital.models import Hospitaldb
+
+def hospital_list(request):
+    hospitals = Hospitaldb.objects.all().values("name", "speciality", "contact", "address", "latitude", "longitude")
+    return JsonResponse(list(hospitals), safe=False)

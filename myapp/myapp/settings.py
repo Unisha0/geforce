@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'patient',
     'rest_framework',
     'shea',
+    #'leaflet',
 ]
 
 MIDDLEWARE = [

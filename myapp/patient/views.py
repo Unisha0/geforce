@@ -5,6 +5,7 @@ from .models import Patient, Advertisement, PatientHistory
 from .forms import PatientSignupForm, PatientLoginForm
 from .serializers import AmbulanceSerializer  # Import the serializer
 
+
 def signup(request):
     if request.method == 'POST':
         form = PatientSignupForm(request.POST)
@@ -81,3 +82,9 @@ def patient_history(request):
 def logout(request):
     request.session.flush()
     return redirect('patient_login')
+
+from django.shortcuts import render
+
+def patient_map(request):
+    return render(request, "patient/ambulance.html")
+
